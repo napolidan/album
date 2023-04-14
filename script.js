@@ -1,7 +1,5 @@
 // album logic
 
-
-
 window.onload = function() {
 
   var time = 48;

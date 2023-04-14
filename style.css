@@ -1,9 +1,13 @@
+:root {
+    --customColor: rgb(255, 255, 255);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'Cairo';
+    font-family: 'Six Caps', sans-serif;
 }
 
 body {
@@ -12,8 +16,31 @@ body {
     height: 100vh;
 }
 
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 10;
+    box-shadow: 1px 1px 281px 53px rgba(18,18,18,0.75) inset;
+    -webkit-box-shadow: 1px 1px 281px 53px rgba(18,18,18,0.75) inset;
+    -moz-box-shadow: 1px 1px 281px 53px rgba(18,18,18,0.75) inset;
+}
+
+.overlay h1 {
+    margin: auto;
+    font-size: 2rem;
+    user-select: none;
+    color: var(--customColor)
+}
+
+.overlay h1 span {
+    color: rgb(245, 192, 113);
+}
+
 .crop {
     margin: auto;
+    border: 1px solid var(--customColor);
     width: 100%;
     height: 100vw;
 }
@@ -25,10 +52,11 @@ body {
     flex-wrap: wrap;
     width: 100%;
     aspect-ratio: 0.47 / 1;
-    background-color: rgb(32, 32, 32);
+    background-color: var(--customColor);
     overflow: hidden;
     transform: translateY(-25%);
     transition: all 2s ease;
+    animation: pulse 5s infinite;
 }
 
 .column {
@@ -38,6 +66,7 @@ body {
     padding-inline: 2px;
     flex-direction: column;
     transform: translateY(3%);
+    opacity: 0.9;
 }
 
 .column:nth-child(1), .column:nth-child(4){
@@ -51,5 +80,4 @@ img {
     --child-height: 100%;
     transform-origin: top;
 }
-
 
